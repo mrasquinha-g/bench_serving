@@ -458,9 +458,9 @@ class VLLMMetricsCollector:
         # Compute histogram percentiles from buckets
         percentile_metrics = self.compute_histogram_percentiles(vllm_all)
 
-        # Compute throughput from counter deltas
+        # Compute throughput metrics from counter deltas
         throughput_metrics = self.compute_throughput_metrics(
-            vllm_all, collection_time)
+            vllm_metrics, collection_time)
 
         logging.info(
             f"Parsed {len(vllm_metrics)} regular metrics + "
